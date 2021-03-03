@@ -37,12 +37,21 @@ def confirmPage():
     chk_Fri.grid_forget()
     chk_Sat.grid_forget()
     btn_submit.grid_forget()
-    
     lbl_selection.grid(row=9, column=10)
-    
-    if Sunday==1:
-        lbl_sun.grid(row=10,column=10)
-    
+    if(Sunday.get() == 1):
+        lbl_sun.grid(row=10, column=10)
+    if(Monday.get() == 1):
+        lbl_mon.grid(row=11, column=10)
+    if(Tuesday.get() == 1):
+        lbl_tues.grid(row=12, column=10)
+    if(Wednesday.get() == 1):
+        lbl_wed.grid(row=13, column=10)
+    if(Thursday.get() == 1):
+        lbl_thur.grid(row=14, column=10)
+    if(Friday.get() == 1):
+        lbl_fri.grid(row=15, column=10)
+    if(Saturday.get() == 1):
+        lbl_sat.grid(row=16, column=10)
     
 #for r in range(20):
 #    for c in range(20):
@@ -69,13 +78,13 @@ Friday = IntVar()
 Saturday = IntVar()
 Sunday = IntVar()
 
+chk_Sun = Checkbutton(gui, text="Sunday", variable=Sunday, highlightcolor='blue', width=6)
 chk_Mon = Checkbutton(gui, text="Monday", variable=Monday, highlightcolor='blue', width=6)
 chk_Tues = Checkbutton(gui, text="Tuesday", variable=Tuesday, highlightcolor='blue', width=7)
 chk_Wed = Checkbutton(gui, text="Wednesday", variable=Wednesday, highlightcolor='blue', width=9)
 chk_Thur = Checkbutton(gui, text="Thursday", variable=Thursday, highlightcolor='blue', width=8)
 chk_Fri = Checkbutton(gui, text="Friday", variable=Friday, highlightcolor='blue', width=6)
 chk_Sat = Checkbutton(gui, text="Saturday", variable=Saturday, highlightcolor='blue', width=8)
-chk_Sun = Checkbutton(gui, text="Sunday", variable=Sunday, highlightcolor='blue', width=6)
 btn_submit = Button(gui, text="Submit", command= confirmPage)
 
 lbl_selection = Label(gui, text="You selected:", font=instructionsFont, fg='white', bg='black')
